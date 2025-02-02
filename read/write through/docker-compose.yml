@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name:  mysql_container
+    environment:
+      -  MYSQL_ROOT_PASSWORD: root
+      -  MYSQL_DATABASE: test_db
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: "redis"
+    container_name: redis_container
+    ports:
+      - "6379:6379"
+
+  fastapi:
+  build: .
+  ports:
+      - "8000:8000"
+  depends_on:
+      - mysql
+      - redis
+
+      
+  
+  
