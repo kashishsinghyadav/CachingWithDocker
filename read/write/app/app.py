@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from database import create_db_connection
-from redis_cache import cache
+from app.database import create_db_connection
+from app.redis_cache import cache
 
 app = FastAPI()
 
