@@ -1,4 +1,4 @@
-
+version: "3.9"
 
 services:
   mysql:
@@ -11,14 +11,15 @@ services:
       - "3306:3306"
 
   redis:
-    image: "redis:latest"
+    image: redis:latest
     container_name: redis_container
     ports:
       - "6379:6379"
 
   fastapi:
-    build: app/app/.
-
+    build:
+      context: .  # Builds from the root directory
+      dockerfile: Dockerfile  # Explicitly specify Dockerfile location
     container_name: fastapi_container
     ports:
       - "8000:8000"
