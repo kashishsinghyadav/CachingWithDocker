@@ -8,7 +8,7 @@ import threading
 app = FastAPI()
 
 # Redis Connection
-redis_client = redis.StrictRedis(host="redis_container", port=6379, db=0, decode_responses=True)
+redis_client = redis.StrictRedis(host="redis_container1", port=6379, db=0, decode_responses=True)
 
 # MySQL Connection
 db_connection = pymysql.connect(
