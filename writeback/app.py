@@ -12,7 +12,7 @@ redis_client = redis.StrictRedis(host="redis_container", port=6379, db=0, decode
 
 # MySQL Connection
 db_connection = pymysql.connect(
-    host="mysql_container",
+    host="mysql_container1",
     user="root",
     password="root",
     database="test_db",
