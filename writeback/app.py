@@ -13,10 +13,12 @@ redis_client = redis.StrictRedis(host="redis_container1", port=6379, db=0, decod
 # MySQL Connection
 db_connection = pymysql.connect(
     host="mysql_container1",
-    user="root",
+    user="user",
     password="root",
     database="test_db",
-    cursorclass=pymysql.cursors.DictCursor
+    cursorclass=pymysql.cursors.DictCursor,
+    auth_plugin='mysql_native_password'
+
 )
 
 # Background thread to sync cache with database periodically
